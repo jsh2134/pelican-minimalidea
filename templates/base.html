@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/prettify.css" type="text/css" />
+        <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+        {% if FEED_RSS %}
+        <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie.css"/>
+                <script src="{{ SITEURL }}/js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie6.css"/><![endif]-->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+      <script src="{{ SITEURL}}/theme/js/prettify.js" type="text/javascript"></script>
+      <script type='text/javascript'>
+      // http://www.codingthewheel.com/archives/syntax-highlighting-stackoverflow-google-prettify
+      // Stolen from StackOverflow. Find all </code><pre><code> 
+      // elements on the page and add the "prettyprint" style. If at least one 
+      // prettyprint element was found, call the Google Prettify prettyPrint() API.
+      //http://sstatic.net/so/js/master.js?v=6523
+      $(function() {
+          if (typeof disableStyleCode != "undefined") 
+          {
+              return;
+          }
+          var a = false;
+          $("pre").each(function() 
+          {
+              if (!$(this).hasClass("prettyprint")) 
+              {
+                  $(this).addClass("prettyprint");
+                  a = true
+              }
+          });
+          if (a) { prettyPrint() } 
+      });
+      </script>
+
+</head>
+
+<body id="index" class="home">
+{% include 'github.html' %}
+        <header id="banner" class="body">
+             <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+        </header><!-- /#banner -->
+  
+        <section id="main-container" class="body">
+         
+          {% block content %}
+          {% endblock %}
+
+        <section id="extras" class="body">
+          {% if SITESUBTITLE %} 
+            <div class="about">
+              <h2>About</h2>
+              <strong>{{ SITESUBTITLE }}</strong>
+            </div>
+          {% endif %}
+          {% if SOCIAL %}
+                <div class="social">
+                        <h2>Social</h2>
+                        <ul>
+                            <li><a href="{{ SITEURL }}/{{ FEED }}" rel="alternate">Subscribe to Atom</a></li>
+                            {% if FEED_RSS %}
+                            <li><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate">Subscribe to RSS</a></li>
+                            {% endif %}
+
+                        {% for name, link in SOCIAL %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                </div><!-- /.social -->
+        {% endif %}
+
+        </section><!-- /#extras -->
+      </section><!-- /#main-continer -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+{% include 'analytics.html' %}
+{% include 'piwik.html' %}
+{% include 'disqus_script.html' %}
+</body>
+</html>

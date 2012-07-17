@@ -1,0 +1,20 @@
+<footer class="post-info">
+
+        <p>
+       {% if article.author %}
+        <address class="vcard author">
+                By <a class="url fn" href="{{ SITEURL }}/author/{{ article.author }}.html">{{ article.author }}</a>
+        </address>
+        {% endif %}
+
+        <abbr class="published" title="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}
+        </abbr>
+
+        <!-- Disable Categories  In <a href="{{ SITEURL }}/category/{{ article.category }}.html">{{ article.category }}</a>. -->
+
+        </p>
+
+{% include 'taglist.html' %}
+{% include 'translations.html' %}
+</footer><!-- /.post-info -->
