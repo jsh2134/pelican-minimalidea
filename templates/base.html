@@ -47,6 +47,10 @@
 
       <meta name="description" content="{% block seo_meta %}{{SEO_META_DESCRIPTION}}{% endblock %}">
 
+{% if GOOGLE_WEBMASTER_TOOLS %}
+<meta name="google-site-verification" content="{{GOOGLE_WEBMASTER_TOOLS}}" />
+{% endif %}
+
 </head>
 
 <body id="index" class="home">
