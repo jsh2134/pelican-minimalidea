@@ -11,6 +11,7 @@
         }}</a></h1> {% include 'twitter.html' %} </header>
         <div class="entry-content">
         {{ article.content }}
+        {% if SHAREAHOLIC%} {% include 'shareaholic.html' %} {% endif %}
         </div><!-- /.entry-content -->
         {% include 'article_infos.html' %}
         {% if DISQUS_SITENAME %}
