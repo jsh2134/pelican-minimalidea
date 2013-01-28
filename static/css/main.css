@@ -140,9 +140,15 @@ aside, nav, article, figure {
 }
 
 /***** Layout *****/
-.body {clear: both; margin: 0 auto; width: 860px;}
+.body {clear: both; margin: 0 auto;}
 img.right figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: right; margin: 0 0 2em 2em;}
+
+/******* Article ******/
+.main-article {
+	background-color:red;
+	width:800px;
+}
 
 
 /*
