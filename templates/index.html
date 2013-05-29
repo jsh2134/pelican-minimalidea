@@ -4,8 +4,9 @@
 {% if articles %}
     {% for article in articles_page.object_list %}        
 
+
         {# First item #}
-        {% if loop.first and not articles_page.has_previous() %}
+        {% if loop.first and not articles_page.has_previous() and not INDEX_VIEW %}
             <aside id="featured" class="body">
                 <article>
                     <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1> 
