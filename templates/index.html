@@ -36,9 +36,12 @@
                 </header>
                 
                 <div class='entry-content'>
-                  {% include 'article_infos.html' %}
-                  {{ article.summary }}
-                  <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                    {% include 'article_infos.html' %}
+                    <div style='margin-left:300px;'>
+                    {{ article.summary }}
+                    </div>
+                    <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                  </div>
                   {% include 'comments.html' %}
                 </div><!-- /.entry-content -->
             </article></li>
