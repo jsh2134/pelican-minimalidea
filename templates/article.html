@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
 
-{% block seo_meta %}{{article.title}} {% if article.tags %} {% for tag in article.tags %} {{ tag }} {% endfor %} {% endif %}{% endblock %}
+{% block seo_meta %} {{article.title}} - {{article.summary}} {% if article.tags %} {% for tag in article.tags %} {{ tag }} {% endfor %} {% endif %}{% endblock %}
 
 {% block content %}        
 <section id="content" class="body">    
@@ -31,4 +31,32 @@
 
 </article>
 </section>
+
+{% if articles_page %}
+  <section>
+    {% for article in articles_page.object_list %}        
+
+            {% if loop.first and articles_page.has_previous %}
+                <section id="index-content" class="body">
+                    <ol id="posts-list" class="hfeed" start="{{ articles_paginator.per_page -1 }}">
+            {% endif %}
+            <li><article class="hentry">    
+                <header>
+                        <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h1>
+                </header>
+                
+                <div class='entry-content'>
+                  {% include 'article_infos.html' %}
+                  {{ article.summary }}
+                  <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                  {% include 'comments.html' %}
+                </div><!-- /.entry-content -->
+            </article></li>
+{% endfor %}
+    {% if loop.length > 1 or articles_page.has_previous() %}
+    </ol><!-- /#posts-list -->
+    </section><!-- /#content -->
+{% endif %}
+{% endif %}
+
 {% endblock %}
