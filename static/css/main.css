@@ -367,7 +367,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	Footer
 *****************/
 #contentinfo {
-	padding: 0em 0em; 
+	padding: 2em 0em; 
 	text-align: right;
 	clear: both;
 	}
@@ -390,7 +390,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .hentry .post-info * {font-style: normal;}
 
 	/* Content */
-	.hentry footer {margin-bottom: 2em;}
+	.hentry footer {margin-bottom: 0.2em;}
 	.hentry footer address {display: inline;}
 	#posts-list footer address {display: inline;}
 
