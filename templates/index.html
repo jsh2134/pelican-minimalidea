@@ -37,7 +37,7 @@
                 
                 <div class='entry-content'>
                     {% include 'article_infos.html' %}
-                    {{ article.content|truncate(400) }}
+                    {{ article.content|truncate(600) }}
                     <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
                   </div>
                   {% include 'comments.html' %}
