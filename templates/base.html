@@ -87,6 +87,15 @@
                 </div><!-- /.social -->
         {% endif %}
 
+    {% if articles %}
+    <h1>Latest Posts</h1>
+     <div id="article-summary">
+     {% for article in articles[:15] %}        
+         <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h2>
+    {% endfor %}
+    </div><!-- /#content -->
+    {% endif %}
+
         </section><!-- /#extras -->
       </section><!-- /#main-continer -->
 
