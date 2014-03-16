@@ -380,6 +380,9 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	border-bottom: 1px solid #eee;
 	padding: 1.5em 0;
 }
+.hentry h1 {
+	margin-bottom: .2em;
+}
 li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #content > .hentry {padding: 1em 0;}
 .hentry img{display : none ;}
