@@ -36,10 +36,8 @@
                 </header>
                 
                 <div class='entry-content'>
-                    {% include 'article_infos.html' %}
-                    <div style='margin-left:300px;'>
                     {{ article.summary }}
-                    </div>
+                    {% include 'article_infos.html' %}
                     <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
                   </div>
                   {% include 'comments.html' %}

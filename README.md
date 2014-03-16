@@ -4,6 +4,7 @@ pelican-minimalidea
 Theme for Pelican blogging software inspired by 'notmyidea' theme.
 
 Additions
+- Multiple articles on homepage
 - Sidebar in main article view with an about section
 - Google Prettify Code for sexy code
 - Github and StackOverflow Icons in Social section

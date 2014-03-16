@@ -52,7 +52,7 @@ a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
 	color: #C74350;
 	padding: 0 1px;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:hover, a:active {
 	background-color: #C74350;
@@ -392,7 +392,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	/* Content */
 	.hentry footer {margin-bottom: 2em;}
 	.hentry footer address {display: inline;}
-	#posts-list footer address {display: block;}
+	#posts-list footer address {display: inline;}
 
 	/* Blog Index */
 	#posts-list {list-style: none; margin: 0;}
@@ -400,10 +400,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	#posts-list footer {
 		left: 10px;
-		position: relative;
-        	float: left;
 		top: 0.5em;
-		width: 260px;
 	}
 	
 	/* About the Author */
